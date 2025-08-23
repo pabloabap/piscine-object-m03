@@ -3,12 +3,16 @@
 #ifndef WHEEL_CLASS_HPP
 # define WHEEL_CLASS_HPP
 
-# include "Car.hpp"
+# include <iostream>
+
+class Car;
 
 class Wheel
 {
 	private:
-		friend class Car;
+		friend class 		Car;
+		static const int	MAX_ANGLE = 90;
+		int					_direction;
 		
 		Wheel(void);
 		~Wheel(void);
@@ -18,6 +22,6 @@ class Wheel
 
 		void			turn_wheel(int angle);
 		void			straighten_wheels(void);
-}
+};
 
 #endif

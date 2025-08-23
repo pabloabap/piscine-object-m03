@@ -5,6 +5,9 @@
 
 # include "Brake.hpp"
 # include "Transmission.hpp"
+# include "Wheel.hpp"
+# include "Engine.hpp"
+# include "SpeedController.hpp"
 
 class Car
 {
@@ -13,6 +16,7 @@ class Car
 		Transmission	_transmission;
 		Wheel			_wheel;
 		Brake			_brake;
+		SpeedController	_speedController;
 
 		Car(const Car& src);
 
@@ -23,7 +27,8 @@ class Car
 		~Car(void);	
 
 		void	start(void);
-		void	stop(void); 
+		void	stop(void);
+		void	accelerate(int speed);
 		void	shift_gears_up(void);
 		void	shift_gears_down(void);
 		void	reverse(void);
@@ -31,21 +36,10 @@ class Car
 		void	straighten_wheels(void);
 		void	apply_force_on_brakes(int force);
 		void	apply_emergency_brakes(void);
-}
 
-class Engine
-{
-	private:
-		friend class	Car;
-		
-		void			start(void) const;
-		void			stop(void) const; 
+		friend	std::ostream	&operator<<(std::ostream &o, Car const &src);
+};
 
-		Engine(void);
-		~Engine(void);
-		Engine(const Engine& src);
-		
-		Engine&	operator = (const Engine& src);
-}
+std::ostream	&operator<<(std::ostream &o, Car const &src);
 
 #endif

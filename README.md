@@ -9,8 +9,7 @@ Puede existir una clase principal cuya función sea coordinar las acciones del o
 Las entidades de software deben estar abiertas para su extensión, pero cerradas para su modificación.
 
 ## [L]iskov substitution
-Los objetos de un programa deberían ser reemplazables por instancias de sus subtipos sin alterar el correcto
-funcionamineto del programa.
+Los objetos de un programa deberían ser reemplazables por instancias de sus subtipos sin alterar el correcto funcionamineto del programa.
 
 ## [I]nterface segregation
 Muchas interfaces cliente específicas son mejores que una interfaz de proposito general.

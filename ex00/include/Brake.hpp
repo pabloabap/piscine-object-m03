@@ -3,7 +3,7 @@
 
 # include <iostream>
 
-# include "Car.hpp"
+class Car;
 
 class Brake
 {
@@ -18,6 +18,6 @@ class Brake
 		
 		void 	apply_force_on_brakes(int force);
 		void	apply_emergency_brakes(void);
-}
+};
 
 #endif
