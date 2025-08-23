@@ -34,6 +34,7 @@ all: $(NAME)
 
 $(NAME): $(OBJS)
 	$(CPP) $(CPP_FLAGS) -I$(HEADERS_DIR) -o $(NAME) $(OBJS)
+	@if  ! grep -q $(NAME) ../.gitignore; then echo $(NAME) >> ../.gitignore; fi
 
 $(OBJS_DIR):
 	mkdir -p $(OBJS_DIR)
