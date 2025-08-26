@@ -16,8 +16,10 @@ No puede ocurrir que una clase derivada deje sin implementar un método sobreesc
 
 ## [I]nterface segregation
 Muchas interfaces cliente específicas son mejores que una interfaz de proposito general.
+Una clase no debe depender de métodos que no usan.
 
 ## [D]epenency inversion
-Depender de abstracciones, no de implementaciones.
-
-
+Depender de abstracciones, no de implementaciones. Por ejemplo indicar en el constructor de una clase interfaces como parametros y al construir
+los objetos especificar la implementación concreta de la interfaz que se va a usar.
+Las clases de alto nivel no deberían depender de clases de bajo nivel, ambas deberían depender de abstracciones. Las abstracciones no deberían depender de los detalles, sino los detalles deberían depender de las abstracciones.
+Módulos de alto nivel (personalización del sistema). Modulos de bajo nivel (herramientas).

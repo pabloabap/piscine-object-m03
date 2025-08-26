@@ -4,12 +4,12 @@
 
 int main(void)
 {
+	std::vector<AShape *>	figures;
 	try
 	{
-		std::vector<AShape *>	figures;
 
 		figures.push_back(new Circle(1.));
-//		figures.push_back(new Rectangle(1., -2.));
+		figures.push_back(new Rectangle(1., -2.));
 		figures.push_back(new Rectangle(1., 2.));
 		figures.push_back(new Triangle(3., 3., 3.));
 //		figures.push_back(new Triangle(3., 3., -3.));
@@ -25,5 +25,11 @@ int main(void)
 	{
 		std::cout << "ERROR - " << e.what() << std::endl;
 	}
+	for (std::vector<AShape *>::const_iterator it = figures.begin();
+	it != figures.end(); it++)
+	{
+		delete *it;
+	}
+	figures.clear();
 	return (0);
 }

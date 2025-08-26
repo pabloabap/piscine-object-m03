@@ -1,5 +1,6 @@
 .vscode
 build/
-Car
-Commander
+SingleREsponsability 
+Openclose
 Liskov
+InterfaceSegregation

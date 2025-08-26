@@ -1,6 +1,6 @@
 # Cabecera
 
-NAME		= Car
+NAME		= SingleREsponsability
 
 CPP			= c++
 CPP_FLAGS	= -Wall -Wextra -Werror -std=c++98 -pedantic

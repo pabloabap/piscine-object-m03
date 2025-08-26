@@ -22,6 +22,7 @@ int main(void)
 		std::cout << "COMANDA TOTAL PRICE: " << (*it)->get_total_price() << std::endl;
 		delete *it;
 	}
+	comandas.clear();
 	
 	return(0);
 }

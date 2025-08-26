@@ -1,34 +1,39 @@
-# CABECERA
+#CABECERA
 
-NAME		= Openclose
+NAME		= InterfaceSegregation
 
 CPP			= c++
 CPP_FLAGS	= -Wall -Wextra -Werror -std=c++98 -pedantic
 
 HEADERS_DIR	= ./include
 HEADERS		= \
-	main.hpp \
-	command.hpp \
-	packageReductionDiscount.hpp \
-	thuesdayDiscount.hpp
+		employeeManagement.hpp \
+		employee.hpp \
+		hourlyEmployee.hpp \
+		salariedEmployee.hpp \
+		main.hpp
+
 HEADERS		:= $(addprefix $(HEADERS_DIR)/, $(HEADERS))
 
 SRCS_DIR	= ./src
 SRCS		= \
-	main.cpp \
-	command.cpp \
-	packageReductionDiscount.cpp \
-	thuesdayDiscount.cpp
+		employeeManagement.cpp \
+		employee.cpp \
+		hourlyEmployee.cpp \
+		salariedEmployee.cpp \
+		main.cpp
+
 SRCS		:= $(addprefix $(SRCS_DIR)/, $(SRCS))
 
 OBJS_DIR	= ./build
-OBJS		= $(addprefix $(OBJS_DIR)/, $(notdir $(patsubst %.cpp, %.o, $(SRCS))))
+OBJS		=  $(addprefix $(OBJS_DIR)/, $(notdir $(patsubst %.cpp, %.o, $(SRCS))))
 
-all:	$(NAME)
+all: $(NAME)
 
 $(NAME): $(OBJS)
 	$(CPP) $(CPP_FLAGS) -I$(HEADERS_DIR) -o $(NAME) $(OBJS)
 	@if  ! grep -q $(NAME) ../.gitignore; then echo $(NAME) >> ../.gitignore; fi
+
 
 
 $(OBJS_DIR):
